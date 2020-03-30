@@ -1,23 +1,13 @@
-## Мастер-класс. Первое приложение на ReactJS
+<img src="public/logo.jpg" width="200" />
 
-1.  В главном компоненте App создайте компонент MovieList, в котором будет отображаться карточки всех фильмов, данные фильмов взять из файла moviesData.js и записать в state компонента <App/> и потом передать в MovieList
-2.  В компоненте MovieList мапируйте полученный массив фильмов и
-    каждый элемент передавайте в компонент MovieItem, в котором будет отображаться карточка фильма
-    (разметка https://getbootstrap.com/docs/4.1/components/card/#example)
-3.  В компоненте App в state запишите список фильмов которые пользователь хочет посмотреть ( moviesWillWatch: []), создайте компонент MovieListWillWatch, в котором будет отображаться:
+## Movies API
 
-- количество фильмов, которое хочет посмотреть пользователь
-- список фильмов, которые пользователь хочет посмотреть
-  (разметка https://getbootstrap.com/docs/4.1/components/list-group/)
+```
+type:  now_playing | upcoming | popular
+GET  https://api.themoviedb.org/3/movie/${type}?api_key=${API_KEY_3}&language=en-US&region=ru&page=1`
+```
 
-4.  В компоненте MovieItem добавить кнопку Will Watch, при нажатии на которую будет в компонент MovieListWillWatch попадать новый фильм, который пользователь захочет посмотреть.
-    Соответсвенно при повторном нажатии - убирать данный фильм из списка WillWatch
-    (менять стили кнопки в зависимости от того хочет смотреть этот фильм или нет - например его цвет,
-    подсказка: в зависимости от состояния компонента MovieItem)
-
-На выходе должно получиться как в примере https://reactwarriors.github.io/reactwarriors-stage-1/
-
-## Путь к изображениям для компонента MovieItem
+## Image
 
 ```
 https://image.tmdb.org/t/p/w500${path}
